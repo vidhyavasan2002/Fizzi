@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment } from "@react-three/drei"; // Removed OrbitControls
 import { Group } from "three";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -12,7 +12,7 @@ import { useStore } from "@/hooks/useStore";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-type Props = {};
+type Props = Record<string, never>; // Fixed empty props type
 
 export default function Scene({}: Props) {
   const isReady = useStore((state) => state.isReady);
@@ -25,7 +25,6 @@ export default function Scene({}: Props) {
 
   const can1GroupRef = useRef<Group>(null);
   const can2GroupRef = useRef<Group>(null);
-
   const groupRef = useRef<Group>(null);
 
   const FLOAT_SPEED = 1.5;
@@ -84,26 +83,15 @@ export default function Scene({}: Props) {
     });
 
     scrollTl
-      // Rotate can group
       .to(groupRef.current.rotation, { y: Math.PI * 2 })
-
-      // Can 1 - black cherry
       .to(can1Ref.current.position, { x: -0.2, y: -0.7, z: -2 }, 0)
       .to(can1Ref.current.rotation, { z: 0.3 }, 0)
-
-      // Can 2 - Lemon Lime
       .to(can2Ref.current.position, { x: 1, y: -0.2, z: -1 }, 0)
       .to(can2Ref.current.rotation, { z: 0 }, 0)
-
-      // Can 3 - Grape
       .to(can3Ref.current.position, { x: -0.3, y: 0.5, z: -1 }, 0)
       .to(can3Ref.current.rotation, { z: -0.1 }, 0)
-
-      // Can 4 - Strawberry Lemonade
       .to(can4Ref.current.position, { x: 0, y: -0.3, z: 0.5 }, 0)
       .to(can4Ref.current.rotation, { z: 0.3 }, 0)
-
-      // Can 5 -Watermelon
       .to(can5Ref.current.position, { x: 0.3, y: 0.5, z: -0.5 }, 0)
       .to(can5Ref.current.rotation, { z: -0.25 }, 0)
       .to(
@@ -140,7 +128,6 @@ export default function Scene({}: Props) {
 
       <FloatingCan ref={can5Ref} flavor="watermelon" floatSpeed={FLOAT_SPEED} />
 
-      {/* <OrbitControls /> */}
       <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
     </group>
   );

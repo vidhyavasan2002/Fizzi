@@ -7,11 +7,11 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage} from "@prismicio/next";
 import { Bounded } from "@/components/Bounded";
 import Button from "@/components/Button";
 import { TextSplitter } from "@/components/TextSplitter";
-import FloatingCan from "@/components/FloatingCan";
+// import FloatingCan from "@/components/FloatingCan";
 import { View } from "@react-three/drei";
 import Scene from "./Scene";
 import { Bubbles } from "./Bubbles";
