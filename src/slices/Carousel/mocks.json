@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Seldom"
+						}
+					}
+				]
+			},
+			"price_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit labore deserunt voluptate voluptate reprehenderit in exercitation nisi cupidatat id tempor ex. Labore pariatur laboris et ex id nulla dolor laboris aliquip magna proident excepteur voluptate magna. Nostrud sit deserunt laboris."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
